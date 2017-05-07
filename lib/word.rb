@@ -4,7 +4,7 @@ class Word
 
   @@all_words = []
 
-  def intialize(attribute)
+  def initialize(attribute)
     @id = @@all_words.length() + 1
     @word_text = attribute.fetch(:word_text)
     @word_class = attribute.fetch(:word_class)
@@ -23,6 +23,17 @@ class Word
     @definitions.push(definition)
   end
 
+  def self.clear
+    @@all_words = []
+  end
 
-
+  def self.find(id)
+    found_word = nil
+    @@all_words.each() do |word|
+      if word.id().eql?(id)
+        found_word = word
+      end
+    end
+    found_word
+  end
 end
