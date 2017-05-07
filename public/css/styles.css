@@ -18,3 +18,10 @@ body {
   height: 100%;
   width: 100%;
 }
+
+.main-empty {
+  background-color: #8bb1ed;
+  border: 7px groove #0041a8;
+  border-radius: 10px;
+  font-family: Shrikhand, cursive;
+}

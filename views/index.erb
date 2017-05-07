@@ -1,3 +1,40 @@
-<h1>Welcome to Dealership Central</h1>
-<a href="/dealerships">See Dealership List</a>
-<a href="/dealerships/new">Add New Dealership</a>
+<% if @words.any? %>
+  <div class="well main-list">
+    <h4>Your words:</h4>
+    <% @words.each() do |word| %>
+      <ul>
+        <li><a href="/word_defs"><%= word.word_text() %> <%= word.word_class() %></a></li>
+      </ul>
+    <% end %>
+  </div>
+<% else %>
+  <div class="well main-empty">
+    <h2>You have yet to enter a word.</h2>
+    <form class="form-horizontal" action="/words" method="post">
+      <div class="form-group">
+        <label for="wd-text">Your word <strong>here</strong>:</label>
+        <input type="text" name="wd-text" id="wd-text">
+      </div>
+      <div class="form-group">
+        <label for="wd-class" class="form-control">Word class:</label>
+        <select class="" name="wd-class" id="wd-class">
+          <option value="Noun">Noun</option>
+          <option value="Verb">Verb</option>
+          <option value="Adjective">Adjective</option>
+          <option value="Adverb">Adverb</option>
+          <option value="Pronoun">Pronoun</option>
+          <option value="Preposition">Preposition</option>
+          <option value="Conjunction">Conjunction</option>
+          <option value="Exclamation">Exclamation</option>
+          <option value="Determiner">Determiner</option>
+        </select>
+      </div>
+      <button class="btn btn-default" type="submit" name="button">Submit Word</button>
+    </form>
+  </div>
+<% end %>
+
+
+<h1>Your Vocabulary Builder</h1>
+<a href="/doctors">See Doctor List</a>
+<a href="/doctors/new">Add New Doctor</a>
