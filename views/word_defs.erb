@@ -1,5 +1,14 @@
 <div class="well main">
-<%= @word.word_text() %>
+  <%= @word.word_text() %>
+  <form class="horizontal-inline" action="/words/<%= @word.id()/definitions%>" method="post">
+    <div class="form-group">
+      <label for="def-text">Enter the defintion of your word here:</label>
+      <input type="text" id="def-text" name="def-text">
+
+    </div>
+    <button type="submit" name="button">Click</button>
+  </form>
+
 </div>
 
 <p><a href="/">Back Home</a></p>
