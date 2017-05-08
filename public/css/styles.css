@@ -1,4 +1,6 @@
 body {
+  background-image: url(../img/blackboard.jpg);
+  background-size: cover;
   margin: 0;
   padding: 0;
   height: 100%;
@@ -6,6 +8,7 @@ body {
 }
 
 .container {
+
   margin: 0;
   padding: 0;
   height: 100%;
@@ -19,9 +22,47 @@ body {
   width: 100%;
 }
 
+.jumbotron {
+  background-color: #fcfc6a;
+  color: red;
+  font-family: Shrikhand, cursive;
+  text-align: center;
+  border: 5px double #00f735;
+  border-radius: 8px;
+}
+
 .main {
   background-color: #8bb1ed;
   border: 7px groove #0041a8;
   border-radius: 10px;
-  font-family: Shrikhand, cursive;
+  font-family: serif;
+}
+
+.welcome {
+  background-color: #5bff92;
+  border: 9px solid #009921;
+  font-family: 'Love Ya Like A Sister', cursive;
+  font-size: 35px;
+  border-radius: 12px;
+  margin: 20px;
+  padding: 15px;
+}
+
+.word-style {
+  font-size: 25px;
+  font-family: 'Love Ya Like A Sister', cursive;
+}
+
+.smile {
+  background-image: url(../img/rainbow.png);
+  background-size: cover;
+  color: #0ab21b;
+  font-family: 'Indie Flower', cursive;
+  height: 20%;
+}
+
+.smilepic {
+  background-image: url(../img/smile.jpg);
+  height: 50px;
+  width: 50px;
 }

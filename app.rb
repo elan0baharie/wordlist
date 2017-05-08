@@ -25,11 +25,11 @@ get('/words/:id/definitions') do
   erb(:word_defs)
 end
 
-post('words/:id/definitions') do
+post('/words/:id/definitions') do
   user_text = params.fetch('def-text')
-  new_defintion = Defintions.new({:text => user_text})
+  new_defintion = Definitions.new({:text => user_text})
   new_defintion.save()
-  @word = Words.find(params.fetch('id').to_i())
+  @word = Word.find(params.fetch('id').to_i())
   @word.add_def(new_defintion)
-  erb(:index)
+  erb(:success)
 end

@@ -1,12 +1,23 @@
 <div class="well main">
-  <%= @word.word_text() %>
-  <form class="horizontal-inline" action="/words/<%= @word.id()/definitions%>" method="post">
+  <div class="word-style">
+    <%= @word.word_text() %>
+    <h4>Definitions:</h4>
+    <% if @word.definitions().any?%>
+    <ul>
+      <% @word.definitions().each() do |word_def| %>
+      <li><%= word_def.text() %></li>
+      <% end %>
+    </ul>
+    <% else %>
+      <h3>You have not entered a definition yet.</h3>
+    <% end %>
+  </div>
+  <form class="horizontal-inline" action="/words/<%= @word.id()%>/definitions" method="post">
     <div class="form-group">
-      <label for="def-text">Enter the defintion of your word here:</label>
+      <label for="def-text">Enter the defintion of <%= @word.word_text() %> here:</label>
       <input type="text" id="def-text" name="def-text">
-
     </div>
-    <button type="submit" name="button">Click</button>
+    <button class="btn btn-default" type="submit" name="button">Click</button>
   </form>
 
 </div>
